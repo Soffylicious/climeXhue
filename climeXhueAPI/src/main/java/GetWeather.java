@@ -11,7 +11,7 @@ public class GetWeather {
         JSONObject o = (JSONObject) parser.parse(weatherAnswer);
         System.out.println(o);
 
-        
+
         return null;
     }
 }
