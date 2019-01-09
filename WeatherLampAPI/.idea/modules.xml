@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WeatherLampAPI.iml" filepath="$PROJECT_DIR$/WeatherLampAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/climeXhueAPI.iml" filepath="$PROJECT_DIR$/climeXhueAPI.iml" />
     </modules>
   </component>
 </project>
