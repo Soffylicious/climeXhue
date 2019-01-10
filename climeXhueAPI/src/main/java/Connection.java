@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -29,7 +26,7 @@ public class Connection {
         if (!city.equals("")) {
             try {
                 if (!city.equals("Home")) {
-                    connection = (HttpURLConnection) (new URL(httpPath + city + ",se" + apiKey + unit))
+                    connection = (HttpURLConnection) (new URL(httpPath + city + apiKey + unit))
                             .openConnection();
                 } else {
                     connection = (HttpURLConnection) (new URL(cordHttpPath + "lat=" + latitude + "&lon=" + longitude
@@ -41,17 +38,24 @@ public class Connection {
                 connection.connect();
 
                 StringBuilder buffer = new StringBuilder();
-                inputStream = connection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader
-                        (inputStream));
-                String line;
-                while ((line = bufferedReader.readLine()) != null) {
-                    buffer.append(line).append("\r\n");
-                }
-                inputStream.close();
-                connection.disconnect();
-                return buffer.toString();
 
+                if (connection.getResponseCode() == 200) {
+
+                    System.out.println(connection.getResponseCode());
+                    inputStream = connection.getInputStream();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader
+                            (inputStream));
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        buffer.append(line).append("\r\n");
+                    }
+                    inputStream.close();
+                    connection.disconnect();
+                    return buffer.toString();
+                } else {
+                    System.out.println(connection.getResponseCode());
+                    return String.valueOf(connection.getResponseCode());
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
