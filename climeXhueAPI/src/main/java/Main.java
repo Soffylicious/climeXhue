@@ -1,18 +1,18 @@
 
+import org.eclipse.paho.client.mqttv3.MqttException;
+import java.net.URISyntaxException;
 import static spark.Spark.*;
-
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MqttException, URISyntaxException {
+        ParseJSON parseJSON = new ParseJSON();
+        Connection connection = new Connection();
 
         get("/city/:city", (req, res) -> {
-            Connection connection = new Connection(req.params(":city"), 0, 0);
-            System.out.println("line 10");
-            String answer = connection.getWeather();
-            System.out.println("line 12");
-            return new GetWeather().getValues(answer);
-
+            String answer = connection.getWeather(req.params(":city"), 0, 0);
+            System.out.println(answer);
+            return parseJSON.getValues(answer);
         });
     }
 }

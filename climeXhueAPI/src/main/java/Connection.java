@@ -11,16 +11,9 @@ public class Connection {
     private String language = "&lang=se";
     private String unit = "&units=metric";
 
-    private String city;
-    private double longitude, latitude;
+    public Connection() {}
 
-    public Connection(String city, double longitude, double latitude) {
-        this.city = city;
-        this.longitude = longitude;
-        this.latitude = latitude;
-    }
-
-    public String getWeather() {
+    public String getWeather(String city, double longitude, double latitude) {
         HttpURLConnection connection;
         InputStream inputStream;
         if (!city.equals("")) {
@@ -41,7 +34,7 @@ public class Connection {
 
                 if (connection.getResponseCode() == 200) {
 
-                    System.out.println(connection.getResponseCode());
+                    System.out.println("HTTP response: " + connection.getResponseCode());
                     inputStream = connection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader
                             (inputStream));
@@ -53,13 +46,14 @@ public class Connection {
                     connection.disconnect();
                     return buffer.toString();
                 } else {
-                    System.out.println(connection.getResponseCode());
+                    System.out.println("HTTP response: " + connection.getResponseCode());
+                    System.out.println(buffer.toString());
                     return String.valueOf(connection.getResponseCode());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        return "error";
+        return "Unexplained server error";
     }
 }
