@@ -2,19 +2,17 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.net.URISyntaxException;
 
 public class ParseJSON {
 
-    private MqttConnection mqttConnection = new MqttConnection("tcp://m20.cloudmqtt.com:14778");
 
-    public ParseJSON() throws MqttException, URISyntaxException {
+    public ParseJSON() {
     }
 
     //TODO weater:main, weather:description, weather:icon (d or n), main:humidity, main:temp, wind:speed
 
 
-    public JSONObject getValues(String weatherAnswer) throws MqttException, URISyntaxException {
+    public JSONObject getValues(String weatherAnswer){
         JSONObject o = new JSONObject(weatherAnswer);
 
         JSONArray array = o.getJSONArray("weather");
@@ -43,12 +41,8 @@ public class ParseJSON {
 
         JSONObject reply = new JSONObject();
         reply.put("cityName", cityName).put("mainWeather", mainWeather).put("details", details).put("day", day)
-                .put("temperature", temp).put("humidity", humidity).put("windSpeed", speed);
-
+                .put("temperature", temp).put("humidity", humidity).put("windSpeed", speed).put("color",color);
         System.out.println(mainWeather);
-
-        mqttConnection.sendMessage("1,hue," + color);
-
         return reply;
     }
 }

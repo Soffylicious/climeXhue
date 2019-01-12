@@ -8,7 +8,6 @@ public class MqttConnection implements MqttCallback {
 
 
     private final int qos = 1;
-    private final String serverURI = "";
     private final String username = "ogwumvss";
     private final String password = "wyonFHDeRKMJ";
     private String topic = "test";
