@@ -19,7 +19,7 @@ public class Connection {
         if (!city.equals("")) {
             try {
                 if (!city.equals("Home")) {
-                    connection = (HttpURLConnection) (new URL(httpPath + city + apiKey + unit))
+                    connection = (HttpURLConnection) (new URL(httpPath + city + apiKey + language + unit))
                             .openConnection();
                 } else {
                     connection = (HttpURLConnection) (new URL(cordHttpPath + "lat=" + latitude + "&lon=" + longitude

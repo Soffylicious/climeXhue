@@ -30,13 +30,13 @@ public class ParseJSON {
         String cityName = o.getString("name");
 
         String color = "";
-        if (mainWeather.equals("Thunderstorm")) color = "thunderstorm";
-        else if (mainWeather.equals("Drizzle")) color = "drizzle";
+        if (mainWeather.equals("Thunderstorm")) color = "0"; //Red
+        else if (mainWeather.equals("Drizzle")) color = "46920"; //Blue
         else if (mainWeather.equals("Rain")) color = "rain";
         else if (mainWeather.equals("Snow")) color = "snow";
         else if (mainWeather.equals("Atmosphere")) color = "atmosphere";
         else if (mainWeather.equals("Clear")) color = "clear";
-        else if (mainWeather.equals("Clouds")) color = "clouds";
+        else if (mainWeather.equals("Clouds")) color = ""; //Blue
 
 
         JSONObject reply = new JSONObject();
