@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ weather.city|title }} | {% endblock %} 
+
+{% block h1 %}
+    {{ weather.city|title }}
+
+    
+{% endblock %}
+
+{% block main %}
+    <div id="main-weather"> <!--  #main-weather -->
+        <span class="temperature">{{ weather.temperature }}°C</span>
+        <span class="description">{{ weather.description }}</span>
+    </div> <!-- /#main-weather-->
+
+    <div id="weather-icon"> <!-- #weather-icon-->
+        <img src="static/weather-icons/{{ weather.icon }}" width="50px"/>
+    </div> <!-- /#weather-icon -->
+
+    <div id="humidity"> <!-- #humidity -->
+        <img src="static/weather-icons/drop.svg" width="20px"/>
+        <span class="percentage">{{ weather.humidity }}%</span>
+    </div> <!-- /#humidity -->
+
+    <div id="wind"> <!-- #wind -->
+        <img src="static/weather-icons/wind.svg" width="20px"/>
+        <span class="speed">{{ weather.speed }} m/s</span>
+    </div> <!-- /#wind -->
+{% endblock  %}
