@@ -4,6 +4,9 @@ import org.json.JSONObject;
 import java.net.URISyntaxException;
 import static spark.Spark.*;
 
+/**
+ * Main class and webb interface
+ */
 public class Main {
 
     public static void main(String[] args) throws MqttException, URISyntaxException {

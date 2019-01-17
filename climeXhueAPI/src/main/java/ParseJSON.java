@@ -1,15 +1,15 @@
-import org.eclipse.paho.client.mqttv3.MqttException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
+/**
+ * Parse the JSON answer from OpenWeatherMap API and creates a new JSON with the values requested by the webb-client
+ */
 public class ParseJSON {
 
 
     public ParseJSON() {
     }
 
-    //TODO weater:main, weather:description, weather:icon (d or n), main:humidity, main:temp, wind:speed
 
 
     public JSONObject getValues(String weatherAnswer){
@@ -30,14 +30,13 @@ public class ParseJSON {
         String cityName = o.getString("name");
 
         String color = "";
-        if (mainWeather.equals("Thunderstorm")) color = "0"; //Red
-        else if (mainWeather.equals("Drizzle")) color = "46920"; //Blue
-        else if (mainWeather.equals("Rain")) color = "rain";
-        else if (mainWeather.equals("Snow")) color = "snow";
-        else if (mainWeather.equals("Atmosphere")) color = "atmosphere";
-        else if (mainWeather.equals("Clear")) color = "clear";
-        else if (mainWeather.equals("Clouds")) color = ""; //Blue
-
+        if (mainWeather.equals("Thunderstorm")) color = "0"; //Red KLAR
+        else if (mainWeather.equals("Drizzle")) color = "46000"; //Light Blue KLAR
+        else if (mainWeather.equals("Rain")) color = "52500"; //Purple KLAR
+        else if (mainWeather.equals("Snow")) color = "47563"; //White KLAR
+        else if (mainWeather.equals("Atmosphere")) color = "25500"; //Green KLAR
+        else if (mainWeather.equals("Clear")) color = "13000"; //Orange KLAR
+        else if (mainWeather.equals("Clouds")) color = "25000"; //Dim KLAR
 
         JSONObject reply = new JSONObject();
         reply.put("cityName", cityName).put("mainWeather", mainWeather).put("details", details).put("day", day)

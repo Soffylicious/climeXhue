@@ -2,6 +2,9 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Connects to OpenWeatherMapAPI and handles requests to OpenWeatherMap API
+ */
 public class Connection {
 
     //API key: 92d45b077fa249614bfc79c61cf8b50f
