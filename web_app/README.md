@@ -1,18 +1,37 @@
+# Installation
 
 
-1. Go to the "web_app" folder 
-2. Start a virtual engine, for example with the following prompts:
-```
+
+# climeXhue web app
+
+This is the user interface for the climeXhue API, allowing the user to set a Philips Hue lamp to a certain city and shining with a color depending on the weather of that city.
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the climeXhue web app.
+
+1. Start a virtual engine inside the web_app folder, e.g. with the following prompts:
+```bash
 $ python3 -m venv venv
 $ source venv/bin/activate
 ```
-3. Download flask and requests
-```
+3. Download the required packages for the app, `flask` and `requests`
+```bash
 $ pip install flask
 $ pip install requests
 ```
-4. Export the Flask app and run
-```
+4. Export the Flask app
+```bash
 $ export FLASK_APP=app.py
-$ python -m flask run
 ```
+5. Run the Flask app and open in your browser
+```bash
+$ python -m flask run
+ * Running on http://127.0.0.1:5000/
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
