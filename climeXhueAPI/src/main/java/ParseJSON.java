@@ -7,10 +7,7 @@ import org.json.JSONObject;
 public class ParseJSON {
 
 
-    public ParseJSON() {
-    }
-
-
+    public ParseJSON() {}
 
     public JSONObject getValues(String weatherAnswer){
         JSONObject o = new JSONObject(weatherAnswer);
