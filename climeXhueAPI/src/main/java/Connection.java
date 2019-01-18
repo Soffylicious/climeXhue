@@ -14,9 +14,7 @@ public class Connection {
     private String language = "&lang=se";
     private String unit = "&units=metric";
 
-    public Connection() {
-        
-    }
+    public Connection() {}
 
     public String getWeather(String city, double longitude, double latitude) {
         HttpURLConnection connection;
