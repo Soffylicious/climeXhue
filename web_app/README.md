@@ -8,14 +8,12 @@ This is the user interface for the climeXhue API, allowing the user to set a Phi
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the climeXhue web app.
-
 1. Start a virtual engine inside the web_app folder, e.g. with the following prompts:
 ```bash
 $ python3 -m venv venv
 $ source venv/bin/activate
 ```
-3. Download the required packages for the app, `flask` and `requests`
+3. Download the required packages for the app, `flask` and `requests`, using the package manager [pip](https://pip.pypa.io/en/stable/).
 ```bash
 $ pip install flask
 $ pip install requests
