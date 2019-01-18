@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>{% block title %}{% endblock %}climeXhue</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <link rel="stylesheet" href="../static/style.css">
         <!-- To add page specific elements -->
         {% block head %}{% endblock %} 
     </head>
@@ -13,9 +13,8 @@
 
         <header>
             <!-- To add page specific header content -->
-            <h1>
-                {% block h1 %}{% endblock %}
-            </h1>
+            {% block header %}{% endblock %}
+
         </header>
 
         <main>

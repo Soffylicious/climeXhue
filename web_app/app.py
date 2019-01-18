@@ -18,9 +18,22 @@ def display():
 
     # ––––––––––––––––––– Power On/Off ––––––––––––––––––––– #
 
-    light_on = request.form['Power']
+    #light_on = request.form['Power']
 
-    power_url = 'http://127.0.0.1:4567/light/%s' % light_on
+    #power_url = 'http://127.0.0.1:4567/light/%s' % light_on
+
+    # light_url = 'http://127.0.0.1:4567/power/{}'
+
+    # light_data = {
+    #     "power": true
+    # }
+
+    # headers = {"Content-Type": "application/json", data:data}
+
+    # p = requests.put(light_url.format("False")).json()
+
+    # print(p)
+    # print("BAJSBAJSBAJS")
 
 
     # ––––––––––––– Get requested city from user –––––––––––– #
@@ -28,11 +41,18 @@ def display():
 
     requested_url = 'http://127.0.0.1:4567/city/%s' % requested_city 
 
+    try:
+        r = requests.get(requested_url).json()
+    
+    except requests.exceptions.RequestException as e:
+        print("NAMJOON")
+        return render_template('404.html')
+
+    
 
     # ––––––––––– Get current weather information ––––––––––– #
 
     # Gets the API data of the specified city
-    r = requests.get(requested_url).json()
 
     # If statements to attribute an icon depending on
     # the main weather and whether it's day or night

@@ -2,13 +2,19 @@
 
 {% block title %}{{ weather.city|title }} | {% endblock %} 
 
-{% block h1 %}
-    {{ weather.city|title }}
-
+{% block header %}
     
+   <h1>{{ weather.city|title }}</h1>
+   <div>
+        <a href="/index">
+            <img src="../static/miscellaneous-icons/search.svg" width="20px">
+        </a>
+    </div>
 {% endblock %}
 
+
 {% block main %}
+
     <div id="main-weather"> <!--  #main-weather -->
         <span class="temperature">{{ weather.temperature }}°C</span>
         <span class="description">{{ weather.description }}</span>

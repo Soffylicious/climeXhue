@@ -18,26 +18,16 @@ body,
     background-color: #FFFFFF;
 }
 
-nav {
-    background-color: #FFFFFF;
-    border: 1px solid gray;
-    height: 50px;
-    width: 100%;
-
-    /* Flexbox settings */
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-item {
-    width: 100px;
-}
-
 header {
     background-color: #FFFFFF;
     border: 1px solid gray;
     margin: 1em;
     text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content
+
 }
 
 h1 {
@@ -46,7 +36,6 @@ h1 {
 
 main {
     background-color: #FFFFFF;
-    border: 1px solid gray;
     margin: 1em;
 
     /* Grid settings */
@@ -64,7 +53,6 @@ main {
 
 .main-item {
     background-color: #FFFFFF;
-    border: 1px solid gray;
     margin: 1em;
 
     /*  Grid settings */

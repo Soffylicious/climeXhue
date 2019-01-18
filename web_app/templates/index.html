@@ -1,32 +1,16 @@
 {% extends "layout.html" %}
 
-{% block h1 %}
-    Sök efter en stad
+{% block header %}
+    <h1>Sök efter en stad</h1>
+
 {% endblock %}
 
+
 {% block main %}
-    <form action = "/display" method = "POST">
-        <p>Stad <input type = "text" name = "City" /></p>
-        <p><input type = "submit" value = "Sök" /></p>
+
+    <form action="/display" method="POST">
+        <p>Stad <input type="text" name="City" /></p>
+        <p><input type="submit" value="Sök" /></p>
     </form>
 
-    <button onclick="getLocation()">GPS</button>
-    <p id="demo"></p>
-    
-    <script>
-        var x = document.getElementById("demo");
-        function getLocation() {
-  
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-            } 
-        }
-
-        function showPosition(position) {
-            x.innerHTML = "Latitude: " + position.coords.latitude + 
-            "<br>Longitude: " + position.coords.longitude; 
-        }
-    </script>
 {% endblock %}
