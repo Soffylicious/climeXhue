@@ -8,21 +8,21 @@ This is the user interface for the climeXhue API, allowing the user to set a Phi
 
 ## Installation
 
-1. Start a virtual engine inside the web_app folder, e.g. with the following prompts:
+1. Start a virtual engine inside the `web_app` folder, e.g. with the following prompts:
 ```bash
 $ python3 -m venv venv
 $ source venv/bin/activate
 ```
-3. Download the required packages for the app, `flask` and `requests`, using the package manager [pip](https://pip.pypa.io/en/stable/).
+2. Download the required packages for the app, `flask` and `requests`, using the package manager [pip](https://pip.pypa.io/en/stable/).
 ```bash
 $ pip install flask
 $ pip install requests
 ```
-4. Export the Flask app
+3. Export the Flask app
 ```bash
 $ export FLASK_APP=app.py
 ```
-5. Run the Flask app and open in your browser
+4. Run the Flask app and open in your browser
 ```bash
 $ python -m flask run
  * Running on http://127.0.0.1:5000/
