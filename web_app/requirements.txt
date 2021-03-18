@@ -58,7 +58,7 @@ packaging==16.8
 passlib==1.7.1
 path-and-address==2.0.1
 peewee==3.7.0
-Pillow==2.6.2
+Pillow==8.1.1
 psycopg2==2.7
 py==1.5.2
 pycodestyle==2.4.0
