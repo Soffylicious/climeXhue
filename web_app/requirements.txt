@@ -64,7 +64,7 @@ py==1.5.2
 pycodestyle==2.4.0
 pycparser==2.18
 pycryptodome==3.5.1
-Pygments==2.2.0
+Pygments==2.7.4
 pylint==2.1.1
 pyparsing==2.1.10
 python-dateutil==2.6.0
